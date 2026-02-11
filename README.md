@@ -16,13 +16,74 @@ This system can operate **without a smartphone**, using onboard communication mo
 ---
 
 ## 🧰 Components Used
-- Arduino (UNO / Nano)
-- Accelerometer (e.g., MPU6050 / ADXL345)
-- GSM Module (SIM800 / SIM900)
-- GPS Module (NEO-6M)
+- Arduino Nano
+- ADXL335 Accelerometer
+- SIM800L GSM Module
+- NEO-6M GPS Module
+- Buck Converter (12V to 5V)
 - Buzzer / Speaker
 - Connecting wires
 - Power supply
+
+---
+
+## 🔌 Circuit Connections
+
+### 📍 ADXL335 (Accelerometer)
+
+| ADXL335 Pin | Connected To | Description |
+|-------------|-------------|-------------|
+| VCC         | +5V (Buck Converter Vo+) | Power Supply |
+| X_OUT       | A1 (Arduino Nano) | X-axis Analog Output |
+| Y_OUT       | A2 (Arduino Nano) | Y-axis Analog Output |
+| Z_OUT       | A3 (Arduino Nano) | Z-axis Analog Output |
+| GND         | GND (Buck Converter Vo-) | Ground |
+
+---
+
+### 📍 GPS Neo-6M
+
+| GPS Pin | Connected To | Description |
+|----------|-------------|-------------|
+| VCC      | +5V (Buck Converter Vo+) | Power Supply |
+| RX       | D9 (Arduino Nano) | Receives Data from Arduino |
+| TX       | D10 (Arduino Nano) | Sends Data to Arduino |
+| GND      | GND (Buck Converter Vo-) | Ground |
+
+---
+
+### 📍 SIM800L GSM Module
+
+| SIM800L Pin | Connected To | Description |
+|-------------|-------------|-------------|
+| MICp        | Microphone +ve | Audio Input |
+| MICn        | Microphone -ve | Audio Input |
+| SPKp        | Speaker +ve | Audio Output |
+| SPKn        | Speaker -ve | Audio Output |
+| VCC         | +5V (Buck Converter Vo+) | Power Supply |
+| RSD         | D3 (Arduino Nano) | SoftwareSerial RX |
+| TXD         | D2 (Arduino Nano) | SoftwareSerial TX |
+| GND         | GND (Buck Converter Vo-) | Ground |
+
+---
+
+### 📍 Arduino Nano
+
+| Arduino Pin | Connected To | Description |
+|-------------|-------------|-------------|
+| Vin         | +5V (Buck Converter Vo+) | Main Power Input |
+| GND         | GND (Buck Converter Vo-) | Ground |
+
+---
+
+### 📍 Buck Converter
+
+| Buck Converter Pin | Connected To | Description |
+|--------------------|-------------|-------------|
+| Vin+               | +12V | Input from Vehicle Battery |
+| Vin-               | GND | Ground |
+| Vo+                | +5V | Regulated Output to System |
+| Vo-                | GND | Common Ground |
 
 ---
 
@@ -54,8 +115,8 @@ This system can operate **without a smartphone**, using onboard communication mo
 ## 👤 Author
 **Sahad Nisham. K**  
 Electronics & Communication Engineering  
-Project: Vehicle Accident Alert System
-Instagram: https://www.instagram.com/sahadnisham.k/
+Project: Vehicle Accident Alert System  
+Instagram: https://www.instagram.com/sahadnisham.k/  
 LinkedIn : https://www.linkedin.com/in/sahad-nisham-k/
 
 ---
